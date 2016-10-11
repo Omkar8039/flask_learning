@@ -1,0 +1,20 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Contact form{% endblock %}
+{% block content %}
+{% for message in form.name.errors %}
+
+<div class="jumbotron">
+  <h1>This is form using bootstrap</h1>
+</div>
+
+<div class="well">{{message}}</div>
+{% endfor %}
+{% for message in form.email.errors %}
+<div class="well">{{message}}</div>
+{% endfor %}
+
+  {{ wtf.quick_form(form) }}
+
+
+{% endblock %}
